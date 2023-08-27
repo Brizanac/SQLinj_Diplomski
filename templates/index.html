@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Store Homepage{% endblock %}
+
+{% block content %}
+<div id="content">
+    <br><br>
+    <h1>Welcome To Basic SQL injection demo</h1>
+    <h2>Search For An Item</h2><br>
+
+    <form action="?" method="GET" onsubmit="search(); return false;">
+        <input type="text" id="searchItem" value="" />
+        <select id="searchEndpoint"> <!-- Added dropdown for endpoint selection -->
+            <option value="store">Store Items</option>
+            <option value="services">Services</option>
+        </select>
+        <input class="button" type="submit" value="Search" />
+    </form>
+
+    <br><br>
+
+    <table id="results">
+        <tr>
+            <th>Name</th>
+            <th>Additional Info 1</th> <!-- This can be "Quantity" for shop items or "Date" for services -->
+            <th>Additional Info 2</th> <!-- This can be "Price" for shop items or "Availability" for services -->
+        </tr>
+    </table>
+
+    <p id="stat"></p>
+</div>
+{% endblock %}
+
